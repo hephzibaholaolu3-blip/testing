@@ -12,14 +12,14 @@ import portfolioImg from "@/assets/portfolio-project.png";
 import publishingImg from "@/assets/publishing-project.png";
 
 const Works = () => {
-  // Projects with actual data
+  // Sample projects - you can replace these with your actual projects
   const projects = [
     {
       id: 1,
       title: "E-Commerce Platform",
       description: "Full-stack e-commerce solution with payment integration and admin dashboard",
       technologies: ["Laravel", "PHP", "MySQL", "JavaScript", "Bootstrap"],
-      image: "/placeholder.svg",
+      image: ecommerceImg,
       liveLink: "#",
       githubLink: "#",
       featured: true
@@ -29,7 +29,7 @@ const Works = () => {
       title: "Task Management App",
       description: "React-based task management application with real-time updates",
       technologies: ["React", "TypeScript", "Node.js", "MongoDB"],
-      image: "/placeholder.svg",
+      image: taskManagementImg,
       liveLink: "#",
       githubLink: "#",
       featured: true
@@ -39,7 +39,7 @@ const Works = () => {
       title: "Restaurant Website",
       description: "Modern restaurant website with online reservation system",
       technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-      image: "/placeholder.svg",
+      image: restaurantImg,
       liveLink: "#",
       githubLink: "#",
       featured: false
@@ -49,7 +49,17 @@ const Works = () => {
       title: "Portfolio Dashboard",
       description: "Analytics dashboard for tracking portfolio performance",
       technologies: ["React", "TypeScript", "Laravel", "Chart.js"],
-      image: "/placeholder.svg",
+      image: portfolioImg,
+      liveLink: "#",
+      githubLink: "#",
+      featured: false
+    },
+    {
+      id: 5,
+      title: "Publishing Company Website",
+      description: "Educational publishing platform for schools and institutions",
+      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL"],
+      image: publishingImg,
       liveLink: "#",
       githubLink: "#",
       featured: false
@@ -93,8 +103,12 @@ const Works = () => {
               {featuredProjects.map((project) => (
                 <Card key={project.id} className="group hover:shadow-elevated transition-smooth border-primary/20">
                   <CardHeader>
-                    <div className="aspect-video bg-gradient-accent rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-muted-foreground">Project Preview</span>
+                    <div className="aspect-video rounded-lg mb-4 overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-xl group-hover:text-primary transition-smooth">
                       {project.title}
@@ -143,8 +157,12 @@ const Works = () => {
               {otherProjects.map((project) => (
                 <Card key={project.id} className="group hover:shadow-glow transition-smooth">
                   <CardHeader>
-                    <div className="aspect-video bg-secondary/50 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-muted-foreground text-sm">Preview</span>
+                    <div className="aspect-video rounded-lg mb-4 overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <CardTitle className="text-lg group-hover:text-primary transition-smooth">
                       {project.title}
